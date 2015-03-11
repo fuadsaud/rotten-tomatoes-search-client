@@ -3,18 +3,26 @@
     LOG_TRANSITIONS: true
   });
 
+  App.ApplicationAdapter = DS.FixtureAdapter;
+
   App.Movie = DS.Model.extend({
-    title: DS.attr('string')
+    title: DS.attr('string'),
+    poster: DS.attr('string')
   });
 
-  App.ApplicationStore = DS.Store.extend({
-    adapter: 'DS.FixtureAdapter'
+  App.Movie.reopenClass({
+    FIXTURES: movies.map(function(m) {
+      return {
+        id: m.id,
+        title: m.title,
+        poster: m.posters.thumbnail
+      };
+    })
   });
-
-  App.Movie.FIXTURES = movies;
 
   App.Router.map(function() {
     this.route('search');
+    this.resource('movie', { path: '/movies/:id' });
   });
 
   App.IndexRoute = Ember.Route.extend({
@@ -24,8 +32,8 @@
   });
 
   App.SearchRoute = Ember.Route.extend({
-    setupController: function(controller) {
-      controller.set('model', movies);
+    model: function() {
+      return this.store.find('movie');
     }
   });
 
@@ -35,11 +43,10 @@
 
     searchResults: function() {
       const query = this.get('q');
-      const movies  = this.get('model');
 
       if (query)
-        return movies.filter(function(movie) {
-          return movie.title.match(new RegExp(query, 'i'));
+        return this.store.filter('movie', function(movie) {
+          return movie.get('title').match(new RegExp(query, 'i'));
         });
         else
           return [];

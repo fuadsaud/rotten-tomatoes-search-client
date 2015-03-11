@@ -28,7 +28,22 @@
       <section id="search-results">
         <ul>
           {{#each result in searchResults}}
-            <li>{{result.title}}</li>
+            <li>
+              <div class="poster">
+                {{#link-to 'movie' result}}
+                  <img {{bind-attr src=result.poster alt=result.title }} />
+                {{/link-to}}
+              </div>
+
+              <div class="details">
+                <h3>
+                  {{#link-to 'movie' result}}
+                    {{result.title}}
+                  {{/link-to}}
+                </h3>
+              </div>
+
+            </li>
           {{/each}}
         </ul>
       </section>
