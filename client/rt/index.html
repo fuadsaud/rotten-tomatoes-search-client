@@ -2,6 +2,9 @@
 <head>
   <meta charset="utf-8">
   <title>Rotten Tomatoes</title>
+
+  <link rel="stylesheet" href="/bower_components/normalize.css/normalize.css" type="text/css" media="screen" charset="utf-8">
+  <link rel="stylesheet" href="/css/app.css" type="text/css" media="screen" charset="utf-8">
 </head>
 
 <body>
@@ -17,16 +20,18 @@
   </script>
 
   <script type="text/x-handlebars" data-template-name="search">
-    <section id="search-results">
+    <section id="search">
       <header>
-       {{input type="search" value=q}}
+       {{input type="search" value=q delay=500}}
       </header>
 
-      <ul id="search-results">
-        {{#each result in searchResults}}
-          <li>{{result.title}}</li>
-        {{/each}}
-      </ul>
+      <section id="search-results">
+        <ul>
+          {{#each result in searchResults}}
+            <li>{{result.title}}</li>
+          {{/each}}
+        </ul>
+      </section>
     </section>
   </script>
 
@@ -39,6 +44,7 @@
   <script src="bower_components/ember-data/ember-data.js"></script>
 
   <!-- scripts -->
+  <script src="js/ext.js"></script>
   <script src="js/data.js"></script>
   <script src="js/app.js"></script>
 </body>

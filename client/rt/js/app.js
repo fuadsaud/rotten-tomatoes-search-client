@@ -3,12 +3,18 @@
     LOG_TRANSITIONS: true
   });
 
-  App.Router.map(function() {
-    this.route('search');
-  });
-
   App.Movie = DS.Model.extend({
     title: DS.attr('string')
+  });
+
+  App.ApplicationStore = DS.Store.extend({
+    adapter: 'DS.FixtureAdapter'
+  });
+
+  App.Movie.FIXTURES = movies;
+
+  App.Router.map(function() {
+    this.route('search');
   });
 
   App.IndexRoute = Ember.Route.extend({
@@ -18,9 +24,6 @@
   });
 
   App.SearchRoute = Ember.Route.extend({
-    actions: {
-      search: function() {}
-    },
     setupController: function(controller) {
       controller.set('model', movies);
     }
@@ -36,10 +39,10 @@
 
       if (query)
         return movies.filter(function(movie) {
-          return movie.title.match(new RegExp(query, 'i'))
+          return movie.title.match(new RegExp(query, 'i'));
         });
-      else
-        return [];
+        else
+          return [];
     }.property('q', 'model')
   });
 })(movies);
