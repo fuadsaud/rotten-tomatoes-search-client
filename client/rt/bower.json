@@ -23,5 +23,10 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "ember": "~1.10",
+    "ember-data": "~1.0.0",
+    "handlebars": "~3.0.0"
+  }
 }

@@ -5,28 +5,37 @@
 </head>
 
 <body>
-  <section id="rotten-tomatoes">
-    <header>
-      <h1>Rotten Tomatoes</h1>
+  <!-- templates -->
+  <script type="text/x-handlebars" >
+    <section id="rotten-tomatoes">
+      <header>
+        <h1>Rotten Tomatoes</h1>
 
-      <input type="search" name="query">
-    </header>
+        <input type="search" name="query">
+      </header>
 
-    <section id="main">
-      <ul id="search-results">
-        <li><a href="#">Result 1</a></li>
-        <li><a href="#">Result 2</a></li>
-        <li><a href="#">Result 3</a></li>
-        <li><a href="#">Result 4</a></li>
-        <li><a href="#">Result 5</a></li>
-        <li><a href="#">Result 6</a></li>
-        <li><a href="#">Result 7</a></li>
-      </ul>
+      {{outlet}}
     </section>
-  </section>
+  </script>
 
+  <script type="text/x-handlebars" data-template-name="index">
+    <h1> FUCK YOU </h1>
+    <ul id="search-results">
+      {{#each result in searchResults}}
+        <li>{{result.title}}</li>
+      {{/each}}
+    </ul>
+  </script>
+
+  <!-- dependecies -->
   <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/handlebars/handlebars.js"></script>
+  <script src="bower_components/ember/ember-template-compiler.js"></script>
   <script src="bower_components/ember/ember.debug.js"></script>
+  <script src="bower_components/ember-data/ember-data.js"></script>
+
+  <!-- scripts -->
+  <script src="js/data.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>
