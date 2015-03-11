@@ -10,24 +10,28 @@
     <section id="rotten-tomatoes">
       <header>
         <h1>Rotten Tomatoes</h1>
-
-        <input type="search" name="query">
       </header>
 
       {{outlet}}
     </section>
   </script>
 
-  <script type="text/x-handlebars" data-template-name="index">
-    <h1> FUCK YOU </h1>
-    <ul id="search-results">
-      {{#each result in searchResults}}
-        <li>{{result.title}}</li>
-      {{/each}}
-    </ul>
+  <script type="text/x-handlebars" data-template-name="search">
+    <section id="search-results">
+      <header>
+       {{input type="search" value=q}}
+      </header>
+
+      <ul id="search-results">
+        {{#each result in searchResults}}
+          <li>{{result.title}}</li>
+        {{/each}}
+      </ul>
+    </section>
   </script>
 
   <!-- dependecies -->
+  <script src="bower_components/lodash/lodash.js"></script>
   <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="bower_components/handlebars/handlebars.js"></script>
   <script src="bower_components/ember/ember-template-compiler.js"></script>
