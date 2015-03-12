@@ -1,5 +1,17 @@
-const movies = [
-  {
+(function(movies) {
+    App.ApplicationAdapter = DS.FixtureAdapter;
+
+    App.Movie.reopenClass({
+        FIXTURES: movies.map(function(m) {
+            return {
+                id: m.id,
+                title: m.title,
+                poster: m.posters.thumbnail
+            };
+        })
+    });
+})([
+    {
     "id": "10015",
     "title": "The Notebook",
     "year": 2004,
@@ -7,68 +19,68 @@ const movies = [
     "runtime": 124,
     "critics_consensus": "",
     "release_dates": {
-      "theater": "2004-06-25",
-      "dvd": "2005-02-08"
+        "theater": "2004-06-25",
+        "dvd": "2005-02-08"
     },
     "ratings": {
-      "critics_rating": "Rotten",
-      "critics_score": 52,
-      "audience_rating": "Upright",
-      "audience_score": 85
+        "critics_rating": "Rotten",
+        "critics_score": 52,
+        "audience_rating": "Upright",
+        "audience_score": 85
     },
     "synopsis": "",
     "posters": {
-      "thumbnail": "http://resizing.flixster.com/zdmmFFd4946Ykrlcydg64C1cWa4=/54x74/dkpu1ddg7pbsk.cloudfront.net/movie/11/15/95/11159565_ori.jpg",
-      "profile": "http://resizing.flixster.com/zdmmFFd4946Ykrlcydg64C1cWa4=/54x74/dkpu1ddg7pbsk.cloudfront.net/movie/11/15/95/11159565_ori.jpg",
-      "detailed": "http://resizing.flixster.com/zdmmFFd4946Ykrlcydg64C1cWa4=/54x74/dkpu1ddg7pbsk.cloudfront.net/movie/11/15/95/11159565_ori.jpg",
-      "original": "http://resizing.flixster.com/zdmmFFd4946Ykrlcydg64C1cWa4=/54x74/dkpu1ddg7pbsk.cloudfront.net/movie/11/15/95/11159565_ori.jpg"
+        "thumbnail": "http://resizing.flixster.com/zdmmFFd4946Ykrlcydg64C1cWa4=/54x74/dkpu1ddg7pbsk.cloudfront.net/movie/11/15/95/11159565_ori.jpg",
+        "profile": "http://resizing.flixster.com/zdmmFFd4946Ykrlcydg64C1cWa4=/54x74/dkpu1ddg7pbsk.cloudfront.net/movie/11/15/95/11159565_ori.jpg",
+        "detailed": "http://resizing.flixster.com/zdmmFFd4946Ykrlcydg64C1cWa4=/54x74/dkpu1ddg7pbsk.cloudfront.net/movie/11/15/95/11159565_ori.jpg",
+        "original": "http://resizing.flixster.com/zdmmFFd4946Ykrlcydg64C1cWa4=/54x74/dkpu1ddg7pbsk.cloudfront.net/movie/11/15/95/11159565_ori.jpg"
     },
     "abridged_cast": [
-      {
+        {
         "name": "Ryan Gosling",
         "id": "162654751",
         "characters": [
-          "Noah"
+            "Noah"
         ]
-      },
-      {
+    },
+    {
         "name": "Rachel McAdams",
         "id": "162652838",
         "characters": [
-          "Allie"
+            "Allie"
         ]
-      },
-      {
+    },
+    {
         "name": "James Garner",
         "id": "162657112",
         "characters": [
-          "Duke"
+            "Duke"
         ]
-      },
-      {
+    },
+    {
         "name": "Gena Rowlands",
         "id": "162653219",
         "characters": [
-          "Allie"
+            "Allie"
         ]
-      },
-      {
+    },
+    {
         "name": "James Marsden",
         "id": "162684857",
         "characters": [
-          "Lon Hammond"
+            "Lon Hammond"
         ]
-      }
+    }
     ],
     "links": {
-      "self": "http://api.rottentomatoes.com/api/public/v1.0/movies/10015.json",
-      "alternate": "http://www.rottentomatoes.com/m/notebook/",
-      "cast": "http://api.rottentomatoes.com/api/public/v1.0/movies/10015/cast.json",
-      "reviews": "http://api.rottentomatoes.com/api/public/v1.0/movies/10015/reviews.json",
-      "similar": "http://api.rottentomatoes.com/api/public/v1.0/movies/10015/similar.json"
+        "self": "http://api.rottentomatoes.com/api/public/v1.0/movies/10015.json",
+        "alternate": "http://www.rottentomatoes.com/m/notebook/",
+        "cast": "http://api.rottentomatoes.com/api/public/v1.0/movies/10015/cast.json",
+        "reviews": "http://api.rottentomatoes.com/api/public/v1.0/movies/10015/reviews.json",
+        "similar": "http://api.rottentomatoes.com/api/public/v1.0/movies/10015/similar.json"
     }
-  },
-  {
+},
+{
     "id": "10093",
     "title": "A Walk to Remember",
     "year": 2002,
@@ -76,71 +88,71 @@ const movies = [
     "runtime": 100,
     "critics_consensus": "",
     "release_dates": {
-      "theater": "2002-01-25",
-      "dvd": "2002-07-09"
+        "theater": "2002-01-25",
+        "dvd": "2002-07-09"
     },
     "ratings": {
-      "critics_rating": "Rotten",
-      "critics_score": 27,
-      "audience_rating": "Upright",
-      "audience_score": 78
+        "critics_rating": "Rotten",
+        "critics_score": 27,
+        "audience_rating": "Upright",
+        "audience_score": 78
     },
     "synopsis": "",
     "posters": {
-      "thumbnail": "http://resizing.flixster.com/Tz7IMBDQDcj4MiTsGY8rCvrce00=/54x81/dkpu1ddg7pbsk.cloudfront.net/movie/11/16/94/11169452_ori.jpg",
-      "profile": "http://resizing.flixster.com/Tz7IMBDQDcj4MiTsGY8rCvrce00=/54x81/dkpu1ddg7pbsk.cloudfront.net/movie/11/16/94/11169452_ori.jpg",
-      "detailed": "http://resizing.flixster.com/Tz7IMBDQDcj4MiTsGY8rCvrce00=/54x81/dkpu1ddg7pbsk.cloudfront.net/movie/11/16/94/11169452_ori.jpg",
-      "original": "http://resizing.flixster.com/Tz7IMBDQDcj4MiTsGY8rCvrce00=/54x81/dkpu1ddg7pbsk.cloudfront.net/movie/11/16/94/11169452_ori.jpg"
+        "thumbnail": "http://resizing.flixster.com/Tz7IMBDQDcj4MiTsGY8rCvrce00=/54x81/dkpu1ddg7pbsk.cloudfront.net/movie/11/16/94/11169452_ori.jpg",
+        "profile": "http://resizing.flixster.com/Tz7IMBDQDcj4MiTsGY8rCvrce00=/54x81/dkpu1ddg7pbsk.cloudfront.net/movie/11/16/94/11169452_ori.jpg",
+        "detailed": "http://resizing.flixster.com/Tz7IMBDQDcj4MiTsGY8rCvrce00=/54x81/dkpu1ddg7pbsk.cloudfront.net/movie/11/16/94/11169452_ori.jpg",
+        "original": "http://resizing.flixster.com/Tz7IMBDQDcj4MiTsGY8rCvrce00=/54x81/dkpu1ddg7pbsk.cloudfront.net/movie/11/16/94/11169452_ori.jpg"
     },
     "abridged_cast": [
-      {
+        {
         "name": "Shane West",
         "id": "162660098",
         "characters": [
-          "Landon Rolands Carter"
+            "Landon Rolands Carter"
         ]
-      },
-      {
+    },
+    {
         "name": "Mandy Moore",
         "id": "287254074",
         "characters": [
-          "Jamie Elizabeth Sullivan"
+            "Jamie Elizabeth Sullivan"
         ]
-      },
-      {
+    },
+    {
         "name": "Peter Coyote",
         "id": "162663977",
         "characters": [
-          "Rev. Sullivan"
+            "Rev. Sullivan"
         ]
-      },
-      {
+    },
+    {
         "name": "Daryl Hannah",
         "id": "162659641",
         "characters": [
-          "Cynthia"
+            "Cynthia"
         ]
-      },
-      {
+    },
+    {
         "name": "Al Thompson",
         "id": "749210734",
         "characters": [
-          "Hunter"
+            "Hunter"
         ]
-      }
+    }
     ],
     "alternate_ids": {
-      "imdb": "0281358"
+        "imdb": "0281358"
     },
     "links": {
-      "self": "http://api.rottentomatoes.com/api/public/v1.0/movies/10093.json",
-      "alternate": "http://www.rottentomatoes.com/m/walk_to_remember/",
-      "cast": "http://api.rottentomatoes.com/api/public/v1.0/movies/10093/cast.json",
-      "reviews": "http://api.rottentomatoes.com/api/public/v1.0/movies/10093/reviews.json",
-      "similar": "http://api.rottentomatoes.com/api/public/v1.0/movies/10093/similar.json"
+        "self": "http://api.rottentomatoes.com/api/public/v1.0/movies/10093.json",
+        "alternate": "http://www.rottentomatoes.com/m/walk_to_remember/",
+        "cast": "http://api.rottentomatoes.com/api/public/v1.0/movies/10093/cast.json",
+        "reviews": "http://api.rottentomatoes.com/api/public/v1.0/movies/10093/reviews.json",
+        "similar": "http://api.rottentomatoes.com/api/public/v1.0/movies/10093/similar.json"
     }
-  },
-  {
+},
+{
     "id": "10180",
     "title": "10 Things I Hate About You",
     "year": 1999,
@@ -148,71 +160,71 @@ const movies = [
     "runtime": 97,
     "critics_consensus": "",
     "release_dates": {
-      "theater": "1999-03-31",
-      "dvd": "1999-10-12"
+        "theater": "1999-03-31",
+        "dvd": "1999-10-12"
     },
     "ratings": {
-      "critics_rating": "Fresh",
-      "critics_score": 61,
-      "audience_rating": "Upright",
-      "audience_score": 69
+        "critics_rating": "Fresh",
+        "critics_score": 61,
+        "audience_rating": "Upright",
+        "audience_score": 69
     },
     "synopsis": "",
     "posters": {
-      "thumbnail": "http://resizing.flixster.com/P1NHuj5sB43MAOyUNl-5XYvTKu4=/54x76/dkpu1ddg7pbsk.cloudfront.net/movie/11/15/34/11153458_ori.jpg",
-      "profile": "http://resizing.flixster.com/P1NHuj5sB43MAOyUNl-5XYvTKu4=/54x76/dkpu1ddg7pbsk.cloudfront.net/movie/11/15/34/11153458_ori.jpg",
-      "detailed": "http://resizing.flixster.com/P1NHuj5sB43MAOyUNl-5XYvTKu4=/54x76/dkpu1ddg7pbsk.cloudfront.net/movie/11/15/34/11153458_ori.jpg",
-      "original": "http://resizing.flixster.com/P1NHuj5sB43MAOyUNl-5XYvTKu4=/54x76/dkpu1ddg7pbsk.cloudfront.net/movie/11/15/34/11153458_ori.jpg"
+        "thumbnail": "http://resizing.flixster.com/P1NHuj5sB43MAOyUNl-5XYvTKu4=/54x76/dkpu1ddg7pbsk.cloudfront.net/movie/11/15/34/11153458_ori.jpg",
+        "profile": "http://resizing.flixster.com/P1NHuj5sB43MAOyUNl-5XYvTKu4=/54x76/dkpu1ddg7pbsk.cloudfront.net/movie/11/15/34/11153458_ori.jpg",
+        "detailed": "http://resizing.flixster.com/P1NHuj5sB43MAOyUNl-5XYvTKu4=/54x76/dkpu1ddg7pbsk.cloudfront.net/movie/11/15/34/11153458_ori.jpg",
+        "original": "http://resizing.flixster.com/P1NHuj5sB43MAOyUNl-5XYvTKu4=/54x76/dkpu1ddg7pbsk.cloudfront.net/movie/11/15/34/11153458_ori.jpg"
     },
     "abridged_cast": [
-      {
+        {
         "name": "Larisa Oleynik",
         "id": "382254460",
         "characters": [
-          "Bianca Stratford"
+            "Bianca Stratford"
         ]
-      },
-      {
+    },
+    {
         "name": "Julia Stiles",
         "id": "162660056",
         "characters": [
-          "Katarina Stratford"
+            "Katarina Stratford"
         ]
-      },
-      {
+    },
+    {
         "name": "Heath Ledger",
         "id": "162652588",
         "characters": [
-          "Patrick Verona"
+            "Patrick Verona"
         ]
-      },
-      {
+    },
+    {
         "name": "Andrew Keegan",
         "id": "382254462",
         "characters": [
-          "Joey Donner"
+            "Joey Donner"
         ]
-      },
-      {
+    },
+    {
         "name": "Joseph Gordon-Levitt",
         "id": "162666960",
         "characters": [
-          "Cameron James"
+            "Cameron James"
         ]
-      }
+    }
     ],
     "alternate_ids": {
-      "imdb": "0147800"
+        "imdb": "0147800"
     },
     "links": {
-      "self": "http://api.rottentomatoes.com/api/public/v1.0/movies/10180.json",
-      "alternate": "http://www.rottentomatoes.com/m/10_things_i_hate_about_you/",
-      "cast": "http://api.rottentomatoes.com/api/public/v1.0/movies/10180/cast.json",
-      "reviews": "http://api.rottentomatoes.com/api/public/v1.0/movies/10180/reviews.json",
-      "similar": "http://api.rottentomatoes.com/api/public/v1.0/movies/10180/similar.json"
+        "self": "http://api.rottentomatoes.com/api/public/v1.0/movies/10180.json",
+        "alternate": "http://www.rottentomatoes.com/m/10_things_i_hate_about_you/",
+        "cast": "http://api.rottentomatoes.com/api/public/v1.0/movies/10180/cast.json",
+        "reviews": "http://api.rottentomatoes.com/api/public/v1.0/movies/10180/reviews.json",
+        "similar": "http://api.rottentomatoes.com/api/public/v1.0/movies/10180/similar.json"
     }
-  },
-  {
+},
+{
     "id": "1789",
     "title": "War of the Worlds",
     "year": 2005,
@@ -220,71 +232,71 @@ const movies = [
     "runtime": 117,
     "critics_consensus": "",
     "release_dates": {
-      "theater": "2005-06-29",
-      "dvd": "2005-11-22"
+        "theater": "2005-06-29",
+        "dvd": "2005-11-22"
     },
     "ratings": {
-      "critics_rating": "Fresh",
-      "critics_score": 74,
-      "audience_rating": "Spilled",
-      "audience_score": 42
+        "critics_rating": "Fresh",
+        "critics_score": 74,
+        "audience_rating": "Spilled",
+        "audience_score": 42
     },
     "synopsis": "",
     "posters": {
-      "thumbnail": "http://resizing.flixster.com/p35Of5f6L93TK42uV8pKDydN3X4=/54x81/dkpu1ddg7pbsk.cloudfront.net/movie/11/18/94/11189471_ori.jpg",
-      "profile": "http://resizing.flixster.com/p35Of5f6L93TK42uV8pKDydN3X4=/54x81/dkpu1ddg7pbsk.cloudfront.net/movie/11/18/94/11189471_ori.jpg",
-      "detailed": "http://resizing.flixster.com/p35Of5f6L93TK42uV8pKDydN3X4=/54x81/dkpu1ddg7pbsk.cloudfront.net/movie/11/18/94/11189471_ori.jpg",
-      "original": "http://resizing.flixster.com/p35Of5f6L93TK42uV8pKDydN3X4=/54x81/dkpu1ddg7pbsk.cloudfront.net/movie/11/18/94/11189471_ori.jpg"
+        "thumbnail": "http://resizing.flixster.com/p35Of5f6L93TK42uV8pKDydN3X4=/54x81/dkpu1ddg7pbsk.cloudfront.net/movie/11/18/94/11189471_ori.jpg",
+        "profile": "http://resizing.flixster.com/p35Of5f6L93TK42uV8pKDydN3X4=/54x81/dkpu1ddg7pbsk.cloudfront.net/movie/11/18/94/11189471_ori.jpg",
+        "detailed": "http://resizing.flixster.com/p35Of5f6L93TK42uV8pKDydN3X4=/54x81/dkpu1ddg7pbsk.cloudfront.net/movie/11/18/94/11189471_ori.jpg",
+        "original": "http://resizing.flixster.com/p35Of5f6L93TK42uV8pKDydN3X4=/54x81/dkpu1ddg7pbsk.cloudfront.net/movie/11/18/94/11189471_ori.jpg"
     },
     "abridged_cast": [
-      {
+        {
         "name": "Tom Cruise",
         "id": "162652763",
         "characters": [
-          "Ray Ferrier"
+            "Ray Ferrier"
         ]
-      },
-      {
+    },
+    {
         "name": "Dakota Fanning",
         "id": "162652764",
         "characters": [
-          "Rachel Ferrier"
+            "Rachel Ferrier"
         ]
-      },
-      {
+    },
+    {
         "name": "Justin Chatwin",
         "id": "162652766",
         "characters": [
-          "Robbie Ferrier"
+            "Robbie Ferrier"
         ]
-      },
-      {
+    },
+    {
         "name": "Miranda Otto",
         "id": "162652765",
         "characters": [
-          "Mary Ann"
+            "Mary Ann"
         ]
-      },
-      {
+    },
+    {
         "name": "Tim Robbins",
         "id": "162655168",
         "characters": [
-          "Harlan Ogilvy"
+            "Harlan Ogilvy"
         ]
-      }
+    }
     ],
     "alternate_ids": {
-      "imdb": "0407304"
+        "imdb": "0407304"
     },
     "links": {
-      "self": "http://api.rottentomatoes.com/api/public/v1.0/movies/1789.json",
-      "alternate": "http://www.rottentomatoes.com/m/war_of_the_worlds/",
-      "cast": "http://api.rottentomatoes.com/api/public/v1.0/movies/1789/cast.json",
-      "reviews": "http://api.rottentomatoes.com/api/public/v1.0/movies/1789/reviews.json",
-      "similar": "http://api.rottentomatoes.com/api/public/v1.0/movies/1789/similar.json"
+        "self": "http://api.rottentomatoes.com/api/public/v1.0/movies/1789.json",
+        "alternate": "http://www.rottentomatoes.com/m/war_of_the_worlds/",
+        "cast": "http://api.rottentomatoes.com/api/public/v1.0/movies/1789/cast.json",
+        "reviews": "http://api.rottentomatoes.com/api/public/v1.0/movies/1789/reviews.json",
+        "similar": "http://api.rottentomatoes.com/api/public/v1.0/movies/1789/similar.json"
     }
-  },
-  {
+},
+{
     "id": "669",
     "title": "The Longest Yard",
     "year": 2005,
@@ -292,71 +304,71 @@ const movies = [
     "runtime": 113,
     "critics_consensus": "",
     "release_dates": {
-      "theater": "2005-05-27",
-      "dvd": "2004-08-03"
+        "theater": "2005-05-27",
+        "dvd": "2004-08-03"
     },
     "ratings": {
-      "critics_rating": "Rotten",
-      "critics_score": 31,
-      "audience_rating": "Upright",
-      "audience_score": 62
+        "critics_rating": "Rotten",
+        "critics_score": 31,
+        "audience_rating": "Upright",
+        "audience_score": 62
     },
     "synopsis": "",
     "posters": {
-      "thumbnail": "http://resizing.flixster.com/jaWOCWgy-6X-yduQ48oDS0sUnG4=/54x81/dkpu1ddg7pbsk.cloudfront.net/movie/11/16/89/11168956_ori.jpg",
-      "profile": "http://resizing.flixster.com/jaWOCWgy-6X-yduQ48oDS0sUnG4=/54x81/dkpu1ddg7pbsk.cloudfront.net/movie/11/16/89/11168956_ori.jpg",
-      "detailed": "http://resizing.flixster.com/jaWOCWgy-6X-yduQ48oDS0sUnG4=/54x81/dkpu1ddg7pbsk.cloudfront.net/movie/11/16/89/11168956_ori.jpg",
-      "original": "http://resizing.flixster.com/jaWOCWgy-6X-yduQ48oDS0sUnG4=/54x81/dkpu1ddg7pbsk.cloudfront.net/movie/11/16/89/11168956_ori.jpg"
+        "thumbnail": "http://resizing.flixster.com/jaWOCWgy-6X-yduQ48oDS0sUnG4=/54x81/dkpu1ddg7pbsk.cloudfront.net/movie/11/16/89/11168956_ori.jpg",
+        "profile": "http://resizing.flixster.com/jaWOCWgy-6X-yduQ48oDS0sUnG4=/54x81/dkpu1ddg7pbsk.cloudfront.net/movie/11/16/89/11168956_ori.jpg",
+        "detailed": "http://resizing.flixster.com/jaWOCWgy-6X-yduQ48oDS0sUnG4=/54x81/dkpu1ddg7pbsk.cloudfront.net/movie/11/16/89/11168956_ori.jpg",
+        "original": "http://resizing.flixster.com/jaWOCWgy-6X-yduQ48oDS0sUnG4=/54x81/dkpu1ddg7pbsk.cloudfront.net/movie/11/16/89/11168956_ori.jpg"
     },
     "abridged_cast": [
-      {
+        {
         "name": "Adam Sandler",
         "id": "162652550",
         "characters": [
-          "Paul `Wrecking' Crewe"
+            "Paul `Wrecking' Crewe"
         ]
-      },
-      {
+    },
+    {
         "name": "Chris Rock",
         "id": "162652551",
         "characters": [
-          "Caretaker"
+            "Caretaker"
         ]
-      },
-      {
+    },
+    {
         "name": "Burt Reynolds",
         "id": "162652552",
         "characters": [
-          "Coach Nate Scarborough"
+            "Coach Nate Scarborough"
         ]
-      },
-      {
+    },
+    {
         "name": "James Cromwell",
         "id": "162652553",
         "characters": [
-          "Warden Hazen"
+            "Warden Hazen"
         ]
-      },
-      {
+    },
+    {
         "name": "Walter Williamson",
         "id": "770709911",
         "characters": [
-          "Errol Dandridge"
+            "Errol Dandridge"
         ]
-      }
+    }
     ],
     "alternate_ids": {
-      "imdb": "0398165"
+        "imdb": "0398165"
     },
     "links": {
-      "self": "http://api.rottentomatoes.com/api/public/v1.0/movies/669.json",
-      "alternate": "http://www.rottentomatoes.com/m/longest_yard/",
-      "cast": "http://api.rottentomatoes.com/api/public/v1.0/movies/669/cast.json",
-      "reviews": "http://api.rottentomatoes.com/api/public/v1.0/movies/669/reviews.json",
-      "similar": "http://api.rottentomatoes.com/api/public/v1.0/movies/669/similar.json"
+        "self": "http://api.rottentomatoes.com/api/public/v1.0/movies/669.json",
+        "alternate": "http://www.rottentomatoes.com/m/longest_yard/",
+        "cast": "http://api.rottentomatoes.com/api/public/v1.0/movies/669/cast.json",
+        "reviews": "http://api.rottentomatoes.com/api/public/v1.0/movies/669/reviews.json",
+        "similar": "http://api.rottentomatoes.com/api/public/v1.0/movies/669/similar.json"
     }
-  },
-  {
+},
+{
     "id": "24214",
     "title": "The Chronicles of Narnia: The Lion, The Witch and The Wardrobe",
     "year": 2005,
@@ -364,72 +376,72 @@ const movies = [
     "runtime": 139,
     "critics_consensus": "",
     "release_dates": {
-      "theater": "2005-12-09",
-      "dvd": "2006-04-04"
+        "theater": "2005-12-09",
+        "dvd": "2006-04-04"
     },
     "ratings": {
-      "critics_rating": "Certified Fresh",
-      "critics_score": 76,
-      "audience_rating": "Upright",
-      "audience_score": 61
+        "critics_rating": "Certified Fresh",
+        "critics_score": 76,
+        "audience_rating": "Upright",
+        "audience_score": 61
     },
     "synopsis": "",
     "posters": {
-      "thumbnail": "http://resizing.flixster.com/cqqIEgv1dU7KZKNn6f5J4yTEviI=/54x80/dkpu1ddg7pbsk.cloudfront.net/movie/10/91/87/10918786_ori.jpg",
-      "profile": "http://resizing.flixster.com/cqqIEgv1dU7KZKNn6f5J4yTEviI=/54x80/dkpu1ddg7pbsk.cloudfront.net/movie/10/91/87/10918786_ori.jpg",
-      "detailed": "http://resizing.flixster.com/cqqIEgv1dU7KZKNn6f5J4yTEviI=/54x80/dkpu1ddg7pbsk.cloudfront.net/movie/10/91/87/10918786_ori.jpg",
-      "original": "http://resizing.flixster.com/cqqIEgv1dU7KZKNn6f5J4yTEviI=/54x80/dkpu1ddg7pbsk.cloudfront.net/movie/10/91/87/10918786_ori.jpg"
+        "thumbnail": "http://resizing.flixster.com/cqqIEgv1dU7KZKNn6f5J4yTEviI=/54x80/dkpu1ddg7pbsk.cloudfront.net/movie/10/91/87/10918786_ori.jpg",
+        "profile": "http://resizing.flixster.com/cqqIEgv1dU7KZKNn6f5J4yTEviI=/54x80/dkpu1ddg7pbsk.cloudfront.net/movie/10/91/87/10918786_ori.jpg",
+        "detailed": "http://resizing.flixster.com/cqqIEgv1dU7KZKNn6f5J4yTEviI=/54x80/dkpu1ddg7pbsk.cloudfront.net/movie/10/91/87/10918786_ori.jpg",
+        "original": "http://resizing.flixster.com/cqqIEgv1dU7KZKNn6f5J4yTEviI=/54x80/dkpu1ddg7pbsk.cloudfront.net/movie/10/91/87/10918786_ori.jpg"
     },
     "abridged_cast": [
-      {
+        {
         "name": "Georgie Henley",
         "id": "284340695",
         "characters": [
-          "Lucy Pevensie"
+            "Lucy Pevensie"
         ]
-      },
-      {
+    },
+    {
         "name": "Skandar Keynes",
         "id": "326299532",
         "characters": [
-          "Edmund Pevensie"
+            "Edmund Pevensie"
         ]
-      },
-      {
+    },
+    {
         "name": "William Moseley",
         "id": "376791694",
         "characters": [
-          "Peter Pevensie"
+            "Peter Pevensie"
         ]
-      },
-      {
+    },
+    {
         "name": "Anna Popplewell",
         "id": "284340694",
         "characters": [
-          "Susan Pevensie"
+            "Susan Pevensie"
         ]
-      },
-      {
+    },
+    {
         "name": "Tilda Swinton",
         "id": "162654047",
         "characters": [
-          "Jadis",
-          "the White Witch"
+            "Jadis",
+            "the White Witch"
         ]
-      }
+    }
     ],
     "alternate_ids": {
-      "imdb": "0363771"
+        "imdb": "0363771"
     },
     "links": {
-      "self": "http://api.rottentomatoes.com/api/public/v1.0/movies/24214.json",
-      "alternate": "http://www.rottentomatoes.com/m/chronicles_of_narnia_lion_witch_wardrobe/",
-      "cast": "http://api.rottentomatoes.com/api/public/v1.0/movies/24214/cast.json",
-      "reviews": "http://api.rottentomatoes.com/api/public/v1.0/movies/24214/reviews.json",
-      "similar": "http://api.rottentomatoes.com/api/public/v1.0/movies/24214/similar.json"
+        "self": "http://api.rottentomatoes.com/api/public/v1.0/movies/24214.json",
+        "alternate": "http://www.rottentomatoes.com/m/chronicles_of_narnia_lion_witch_wardrobe/",
+        "cast": "http://api.rottentomatoes.com/api/public/v1.0/movies/24214/cast.json",
+        "reviews": "http://api.rottentomatoes.com/api/public/v1.0/movies/24214/reviews.json",
+        "similar": "http://api.rottentomatoes.com/api/public/v1.0/movies/24214/similar.json"
     }
-  },
-  {
+},
+{
     "id": "10154",
     "title": "The Day After Tomorrow",
     "year": 2004,
@@ -437,28 +449,28 @@ const movies = [
     "runtime": 124,
     "critics_consensus": "",
     "release_dates": {
-      "theater": "2004-05-28",
-      "dvd": "2004-10-12"
+        "theater": "2004-05-28",
+        "dvd": "2004-10-12"
     },
     "ratings": {
-      "critics_rating": "Rotten",
-      "critics_score": 45,
-      "audience_rating": "Spilled",
-      "audience_score": 50
+        "critics_rating": "Rotten",
+        "critics_score": 45,
+        "audience_rating": "Spilled",
+        "audience_score": 50
     },
     "synopsis": "",
     "posters": {
-      "thumbnail": "http://resizing.flixster.com/Nto31D0L7cioJhL9G_lm_oADJC8=/54x75/dkpu1ddg7pbsk.cloudfront.net/movie/25/43/254313_ori.jpg",
-      "profile": "http://resizing.flixster.com/Nto31D0L7cioJhL9G_lm_oADJC8=/54x75/dkpu1ddg7pbsk.cloudfront.net/movie/25/43/254313_ori.jpg",
-      "detailed": "http://resizing.flixster.com/Nto31D0L7cioJhL9G_lm_oADJC8=/54x75/dkpu1ddg7pbsk.cloudfront.net/movie/25/43/254313_ori.jpg",
-      "original": "http://resizing.flixster.com/Nto31D0L7cioJhL9G_lm_oADJC8=/54x75/dkpu1ddg7pbsk.cloudfront.net/movie/25/43/254313_ori.jpg"
+        "thumbnail": "http://resizing.flixster.com/Nto31D0L7cioJhL9G_lm_oADJC8=/54x75/dkpu1ddg7pbsk.cloudfront.net/movie/25/43/254313_ori.jpg",
+        "profile": "http://resizing.flixster.com/Nto31D0L7cioJhL9G_lm_oADJC8=/54x75/dkpu1ddg7pbsk.cloudfront.net/movie/25/43/254313_ori.jpg",
+        "detailed": "http://resizing.flixster.com/Nto31D0L7cioJhL9G_lm_oADJC8=/54x75/dkpu1ddg7pbsk.cloudfront.net/movie/25/43/254313_ori.jpg",
+        "original": "http://resizing.flixster.com/Nto31D0L7cioJhL9G_lm_oADJC8=/54x75/dkpu1ddg7pbsk.cloudfront.net/movie/25/43/254313_ori.jpg"
     },
     "abridged_cast": [
-      {
+        {
         "name": "Dennis Quaid",
         "id": "162655527",
         "characters": [
-          "Jack Hall"
+            "Jack Hall"
         ]
       },
       {
@@ -3527,4 +3539,4 @@ const movies = [
       "similar": "http://api.rottentomatoes.com/api/public/v1.0/movies/771361762/similar.json"
     }
   }
-];
+]);

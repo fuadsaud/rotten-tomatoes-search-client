@@ -19,7 +19,7 @@
     </section>
   </script>
 
-  <script type="text/x-handlebars" data-template-name="search">
+  <script type="text/x-handlebars" data-template-name="movies">
     <section id="search">
       <header>
        {{input type="search" value=q delay=500}}
@@ -27,18 +27,18 @@
 
       <section id="search-results">
         <ul>
-          {{#each result in searchResults}}
+          {{#each movie in movies}}
             <li>
               <div class="poster">
-                {{#link-to 'movie' result}}
-                  <img {{bind-attr src=result.poster alt=result.title }} />
+                {{#link-to 'movie' movie}}
+                  <img {{bind-attr src=movie.poster alt=movie.title }} />
                 {{/link-to}}
               </div>
 
               <div class="details">
                 <h3>
-                  {{#link-to 'movie' result}}
-                    {{result.title}}
+                  {{#link-to 'movie' movie}}
+                    {{movie.title}}
                   {{/link-to}}
                 </h3>
               </div>
@@ -47,6 +47,12 @@
           {{/each}}
         </ul>
       </section>
+    </section>
+  </script>
+
+  <script type="text/x-handlebars" data-template-name="movie">
+    <section id="movie">
+      {{model.title}}
     </section>
   </script>
 
@@ -60,7 +66,7 @@
 
   <!-- scripts -->
   <script src="js/ext.js"></script>
-  <script src="js/data.js"></script>
   <script src="js/app.js"></script>
+  <!-- <script src="js/data.js"></script> -->
 </body>
 </html>
