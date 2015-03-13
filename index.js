@@ -6,4 +6,4 @@ const app = express();
 app.use(morgan('dev'));
 app.use(express.static('.'))
 
-app.listen(process.env.port || 7001);
+app.listen(process.env.PORT || 7001);
