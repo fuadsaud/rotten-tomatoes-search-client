@@ -9,6 +9,10 @@
 
     App.Movie = DS.Model.extend({
         title: DS.attr('string'),
+        year: DS.attr('number'),
+        mpaa_rating: DS.attr('string'),
+        runtime: DS.attr('number'),
+        synopsis: DS.attr('string'),
         poster: DS.attr('string')
     });
 
@@ -36,5 +40,16 @@
         model: function(params) {
             return this.store.find('movie', params.movie_id)
         }
+    });
+
+    App.MovieView = Ember.View.extend({
+        templateName: 'movie',
+
+        mpaa_rating_img: (function() {
+            return "img/mpaa-"
+                 + this.get('controller.model')
+                       .get('mpaa_rating')
+                       .toLowerCase() + '.png';
+        }).property('mpaa_rating')
     });
 })();
