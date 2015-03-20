@@ -4,7 +4,7 @@
     });
 
     App.ApplicationAdapter = DS.RESTAdapter.extend({
-        host: 'https://rotten-tomatoes-search-server.herokuapp.com'
+        host: 'http://localhost:7000'
     });
 
     App.Comment = DS.Model.extend({
