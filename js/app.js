@@ -12,6 +12,8 @@
         year: DS.attr('number'),
         mpaa_rating: DS.attr('string'),
         runtime: DS.attr('number'),
+        critics_score: DS.attr('number'),
+        audience_score: DS.attr('number'),
         synopsis: DS.attr('string'),
         poster: DS.attr('string')
     });
