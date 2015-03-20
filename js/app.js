@@ -7,6 +7,18 @@
         host: 'http://localhost:7000'
     });
 
+    App.Comment = DS.Model.extend({
+        text: DS.attr('string'),
+        author: DS.attr('string'),
+        movie: DS.belongsTo('movie')
+    });
+
+    App.MovieSerializer = DS.RESTSerializer.extend(DS.EmbeddedRecordsMixin, {
+        attrs: {
+            comments: { embedded: 'always' },
+        }
+    });
+
     App.Movie = DS.Model.extend({
         title: DS.attr('string'),
         year: DS.attr('number'),
@@ -15,7 +27,8 @@
         critics_score: DS.attr('number'),
         audience_score: DS.attr('number'),
         synopsis: DS.attr('string'),
-        poster: DS.attr('string')
+        poster: DS.attr('string'),
+        comments: DS.hasMany('comment')
     });
 
     App.Router.map(function() {
@@ -44,14 +57,37 @@
         }
     });
 
+    App.MovieController = Ember.ObjectController.extend({
+        newCommentText: '',
+
+        actions: {
+            addComment: function() {
+                const model = this.get('model');
+
+                const comment = this.store.createRecord('comment', {
+                    text: this.get('newCommentText'),
+                    author: 'some user'
+                });
+
+                model.get('comments').pushObject(comment);
+
+                model.save().then(function(returnItem) {
+                    returnItem.get('comments').filterBy('id', null).invoke('deleteRecord');
+                });
+
+                this.set('newCommentText', '')
+            }
+        }
+    });
+
     App.MovieView = Ember.View.extend({
         templateName: 'movie',
 
         mpaa_rating_img: (function() {
             return "img/mpaa-"
-                 + this.get('controller.model')
-                       .get('mpaa_rating')
-                       .toLowerCase() + '.png';
+            + this.get('controller.model')
+            .get('mpaa_rating')
+            .toLowerCase() + '.png';
         }).property('mpaa_rating')
     });
 })();

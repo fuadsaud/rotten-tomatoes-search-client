@@ -68,7 +68,8 @@ h1 {
 .movie .card {
     font-size: 2em;
     font-weight: 200;
-    margin-top: 2em;
+    margin-top: 1.5em;
+    margin-bottom: 1em;
     padding: 1.5em;
 }
 
@@ -115,6 +116,11 @@ h1 {
 
 .movie .summary .mpaa-rating {
     height: 25px;
+}
+
+.movie .comments .author {
+    color: #c00;
+    font-weight: bold;
 }
 
 .card {

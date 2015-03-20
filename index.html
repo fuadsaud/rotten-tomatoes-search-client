@@ -81,6 +81,17 @@
 
             <p>{{model.synopsis}}</p>
         </section>
+
+        <section class="card comments">
+            <dl>
+                {{#each comment in model.comments}}
+                    <dt><span class="author">{{comment.author}} says:</span></dt>
+                    <dd><p>{{comment.text}}</p></dd>
+                {{/each}}
+            </dl>
+
+            {{input type="text" value=newCommentText action="addComment"}}
+        </section>
     </section>
   </script>
 
