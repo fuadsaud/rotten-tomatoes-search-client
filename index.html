@@ -12,7 +12,9 @@
     <script type="text/x-handlebars" >
         <section id="rotten-tomatoes">
             <header>
-                <h1>Rotten Tomatoes</h1>
+                <h1>
+                    {{#link-to 'index'}}Rotten Tomatoes{{/link-to}}
+                </h1>
             </header>
 
             {{outlet}}
@@ -67,9 +69,9 @@
                     <span class="separator"></span>
                     <span class="runtime">{{model.runtime}} min.</span>
                     <span class="separator"></span>
-                    <span class="critics-score">{{model.critics_score}}%</span>
+                    <span class="critics-score">Critics score: {{model.critics_score}}%</span>
                     <span class="separator"></span>
-                    <span class="audience-score">{{model.audience_score}}%</span>
+                    <span class="audience-score">Audience score: {{model.audience_score}}%</span>
                 </p>
             </div>
         </header>
