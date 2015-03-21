@@ -1,53 +1,53 @@
 <html lang="en" data-framework="emberjs">
 <head>
     <meta charset="utf-8">
-  <title>Rotten Tomatoes</title>
+    <title>Rotten Tomatoes</title>
 
-  <link rel="stylesheet" href="/bower_components/normalize.css/normalize.css" type="text/css" media="screen" charset="utf-8">
-  <link rel="stylesheet" href="/css/app.css" type="text/css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="/bower_components/normalize.css/normalize.css" type="text/css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="/css/app.css" type="text/css" media="screen" charset="utf-8">
 </head>
 
 <body>
-  <!-- templates -->
-  <script type="text/x-handlebars" >
-      <section id="rotten-tomatoes">
-          <header>
-              <h1>Rotten Tomatoes</h1>
-          </header>
+    <!-- templates -->
+    <script type="text/x-handlebars" >
+        <section id="rotten-tomatoes">
+            <header>
+                <h1>Rotten Tomatoes</h1>
+            </header>
 
-          {{outlet}}
+            {{outlet}}
+        </section>
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="movies">
+        <section id="search">
+            <header>
+                {{input type="search" value=q delay=500 autofocus="autofocus"}}
+            </header>
+
+            <section id="search-results">
+                <ul>
+                {{#each movie in movies}}
+                    <li class="card">
+                    <div class="poster">
+                        {{#link-to 'movie' movie}}
+                        <img {{bind-attr src=movie.poster alt=movie.title }} />
+                        {{/link-to}}
+                    </div>
+
+                    <div class="details">
+                        <h3>
+                        {{#link-to 'movie' movie}}
+                            {{movie.title}}
+                        {{/link-to}}
+                        </h3>
+                    </div>
+
+                    </li>
+                {{/each}}
+                </ul>
+          </section>
       </section>
-  </script>
-
-  <script type="text/x-handlebars" data-template-name="movies">
-    <section id="search">
-      <header>
-       {{input type="search" value=q delay=500}}
-      </header>
-
-      <section id="search-results">
-        <ul>
-          {{#each movie in movies}}
-            <li class="card">
-              <div class="poster">
-                {{#link-to 'movie' movie}}
-                  <img {{bind-attr src=movie.poster alt=movie.title }} />
-                {{/link-to}}
-              </div>
-
-              <div class="details">
-                <h3>
-                  {{#link-to 'movie' movie}}
-                    {{movie.title}}
-                  {{/link-to}}
-                </h3>
-              </div>
-
-            </li>
-          {{/each}}
-        </ul>
-      </section>
-    </section>
   </script>
 
   <script type="text/x-handlebars" data-template-name="movie">
