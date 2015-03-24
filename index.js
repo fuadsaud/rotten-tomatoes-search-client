@@ -1,9 +1,9 @@
-const express = require('express');
-const morgan  = require('morgan');
+const express = require('express')
+const morgan = require('morgan')
 
-const app = express();
+const app = express()
 
-app.use(morgan('dev'));
-app.use(express.static('.'));
+app.use(morgan('dev'))
+app.use(express.static('.'))
 
-app.listen(process.env.PORT || 7001);
+app.listen(process.env.PORT || 7001)
