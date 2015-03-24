@@ -22,31 +22,28 @@
     </script>
 
     <script type="text/x-handlebars" data-template-name="movies">
-        <section id="search">
+        <section class="search">
             <header>
                 {{input type="search" value=q delay=500 autofocus="autofocus"}}
             </header>
 
-            <section id="search-results">
+            <section class="search-results">
                 <ul>
-                {{#each movie in movies}}
-                    <li class="card">
-                    <div class="poster">
-                        {{#link-to 'movie' movie}}
-                        <img {{bind-attr src=movie.poster alt=movie.title }} />
-                        {{/link-to}}
-                    </div>
+                    {{#each movie in movies}}
+                        <li class="card">
+                            <div class="search-results__poster">
+                                {{#link-to 'movie' movie}}
+                                    <img {{bind-attr src=movie.poster alt=movie.title }} />
+                                {{/link-to}}
+                            </div>
 
-                    <div class="details">
-                        <h3>
-                        {{#link-to 'movie' movie}}
-                            {{movie.title}}
-                        {{/link-to}}
-                        </h3>
-                    </div>
-
-                    </li>
-                {{/each}}
+                            <div class="search-results__details">
+                                <h2>
+                                    {{#link-to 'movie' movie}}{{movie.title}}{{/link-to}}
+                                </h2>
+                            </div>
+                        </li>
+                    {{/each}}
                 </ul>
           </section>
       </section>
@@ -54,40 +51,55 @@
 
   <script type="text/x-handlebars" data-template-name="movie">
     <section class="movie">
-        <header class="card summary">
-            <div class="poster">
+        <header class="card movie__summary">
+            <div class="movie__summary__poster">
                <img {{bind-attr src=model.poster alt=model.title }} />
             </div>
 
-            <div class="details">
+            <div class="movie__summary__details">
                 <h2>
                     {{model.title}} ({{model.year}})
                 </h2>
 
                 <p>
-                    <img class="mpaa-rating" {{bind-attr src=view.mpaa_rating_img alt=model.mpaa_rating}} />
+                    <img  class="movie__summary__details__mpaa-rating"
+                        {{bind-attr src=view.mpaa_rating_img alt=model.mpaa_rating}} />
+
                     <span class="separator"></span>
-                    <span class="runtime">{{model.runtime}} min.</span>
+
+                    <span class="movie_summary__details__runtime">{{model.runtime}} min.</span>
+
                     <span class="separator"></span>
-                    <span class="critics-score">Critics score: {{model.critics_score}}%</span>
+
+                    <span class="movie_summary__details__critics-score">
+                        Critics score: {{model.critics_score}}%
+                    </span>
+
                     <span class="separator"></span>
-                    <span class="audience-score">Audience score: {{model.audience_score}}%</span>
+
+                    <span class="movie_summary__details__audience-score">
+                        Audience score: {{model.audience_score}}%
+                    </span>
                 </p>
             </div>
         </header>
 
-        <section class="card synopsis">
+        <section class="card movie__synopsis">
             <header>
-                <h3>synopsis</h3>
+                <h3>Synopsis</h3>
             </header>
 
             <p>{{model.synopsis}}</p>
         </section>
 
-        <section class="card comments">
+        <section class="card movie__comments">
+            <header>
+                <h3>Comments</h3>
+            </header>
+
             <dl>
                 {{#each comment in model.comments}}
-                    <dt><span class="author">{{comment.author}} says:</span></dt>
+                    <dt><span class="movie_comments_author">{{comment.author}} says:</span></dt>
                     <dd><p>{{comment.text}}</p></dd>
                 {{/each}}
             </dl>
