@@ -78,10 +78,12 @@ header.global h1 a:hover {
 }
 
 .search-results li {
-    margin: 1em auto;
-    list-style-type: none;
-    width: 70%;
     display: flex;
+    display: -webkit-flex;
+
+    list-style-type: none;
+    margin: 1em auto;
+    width: 70%;
 }
 
 .search-results li a {
