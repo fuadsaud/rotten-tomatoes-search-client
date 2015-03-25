@@ -55,13 +55,13 @@ header.global h1 a:hover {
     vertical-align: top;
 }
 .search header {
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
     margin: 0 auto;
     width: 80em;
 }
 
 .search input {
     border: none;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
     padding: .3em .5em;
     margin: 0 auto;
