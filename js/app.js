@@ -44,11 +44,25 @@
 
   App.MoviesController = Ember.ArrayController.extend({
     queryParams: ['q'],
-    q: null,
+    q: '',
+    searchTerm: '',
 
-    movies: function () {
-      return this.store.find('movie', { q: this.get('q') })
-    }.property('q', 'model')
+    watchSearch: function () {
+      Ember.run.debounce(this, this.bouncedSet, 500)
+    }.observes('q'),
+
+    bouncedSet: function () {
+      this.set('searchTerm', this.get('q'))
+    },
+
+    model: function () {
+      return this.store.find('movie', { q: this.get('searchTerm') })
+    }.property('searchTerm'),
+
+    noResults: function () {
+      return this.get('searchTerm') && this.get('model').length == 0
+      // return this.get('searchTerm') && this.get('length') == 0
+    }.property('searchTerm', 'model')
   })
 
   App.MovieRoute = Ember.Route.extend({
