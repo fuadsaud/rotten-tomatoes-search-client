@@ -151,3 +151,26 @@ header.global h1 a:hover {
     color: #c00;
     font-weight: bold;
 }
+
+.movie .movie__comments textarea {
+    padding: .5em .7em;
+    border-color: #ccc;
+
+    outline: 0;
+    width: 200px;
+
+    background: -webkit-gradient(linear, left top, left 25, from(#fff), color-stop(4%, #eee), to(#fff));
+    background:    -moz-gradient(top, #fff, #eee 1px, #fff 25px);
+
+    box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+
+    width: 50%;
+
+    line-height: 150%;
+
+}
+
+textarea:hover,
+textarea:focus {
+    box-shadow: 0 13px 2px -6px rgba(0, 0, 0, 0.2);
+}
