@@ -76,10 +76,14 @@
 
     actions: {
       addComment: function () {
+        const newCommentText = this.get('newCommentText')
+
+        if (!newCommentText) return
+
         const model = this.get('model')
 
         const comment = this.store.createRecord('comment', {
-          text: this.get('newCommentText'),
+          text: newCommentText,
           author: 'some user'
         })
 
