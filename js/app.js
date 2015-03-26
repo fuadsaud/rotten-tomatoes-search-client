@@ -72,19 +72,25 @@
   })
 
   App.MovieController = Ember.ObjectController.extend({
+    newCommentAuthor: '',
     newCommentText: '',
+
+    comments: function () {
+      return this.get('model').get('comments').toArray().reverse()
+    }.property('model.comments.@each'),
 
     actions: {
       addComment: function () {
-        const newCommentText = this.get('newCommentText')
+        const newCommentAuthor = this.get('newCommentAuthor').trim()
+        const newCommentText = this.get('newCommentText').trim()
 
-        if (!newCommentText) return
+        if (!newCommentAuthor || !newCommentText) return
 
         const model = this.get('model')
 
         const comment = this.store.createRecord('comment', {
-          text: newCommentText,
-          author: 'some user'
+          author: newCommentAuthor,
+          text: newCommentText
         })
 
         model.get('comments').pushObject(comment)
@@ -93,17 +99,25 @@
           returnItem.get('comments').filterBy('id', null).invoke('deleteRecord')
         })
 
+        this.set('newCommentAuthor', '')
         this.set('newCommentText', '')
       }
     }
   })
 
   App.MovieView = Ember.View.extend({
-    templateName: 'movie',
-
     mpaa_rating_img: function () {
       return 'img/mpaa-' + this.get('controller.model').get('mpaa_rating').toLowerCase() + '.png'
     }.property('mpaa_rating')
+  })
+
+  Ember.TextArea.reopen({
+    insertNewline: function (event) {
+      console.log(event.shiftKey)
+      if (!event.shiftKey) {
+        this._super(event);
+      }
+    }
   })
 
   window.App = App

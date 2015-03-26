@@ -55,7 +55,7 @@
 
   <script type="text/x-handlebars" data-template-name="movie">
     <article class="movie">
-        <header class="card movie__summary">
+        <header class="card card--padded movie__summary">
             <div class="movie__summary__poster">
                <img {{bind-attr src=model.poster alt=model.title }} />
             </div>
@@ -86,7 +86,7 @@
             </div>
         </header>
 
-        <section class="card movie__synopsis">
+        <section class="card card--padded movie__synopsis">
             <header>
                 <h2>Synopsis</h2>
             </header>
@@ -99,18 +99,27 @@
                 <h2>Comments</h2>
             </header>
 
-            {{#if comments.length}}
-                <dl>
-                    {{#each comment in model.comments}}
-                        <dt><span class="movie__comments__author">{{comment.author}} says:</span></dt>
-                        <dd><p>{{comment.text}}</p></dd>
-                    {{/each}}
-                </dl>
+            {{input value=newCommentAuthor
+                    placeholder="enter your name"
+                    class="movie__comments__author"}}
+
+            {{textarea value=newCommentText
+                       insert-newline="addComment"
+                       placeholder="enter your comment and hit return"
+                       class="movie__comments__text"}}
+
+            <hr/>
+
+            {{#each comment in comments}}
+                <blockquote>
+                    {{comment.text}}
+
+                    <cite>{{comment.author}}</cite>
+                </blockquote>
             {{else}}
                 <p>No comments for this movie</p>
-            {{/if}}
+            {{/each}}
 
-            {{textarea type="text" value=newCommentText placeholder="enter your comment" action="addComment"}}
         </section>
     </article>
   </script>
@@ -124,7 +133,6 @@
   <script src="bower_components/ember-data/ember-data.js"></script>
 
   <!-- scripts -->
-  <!-- <script src="js/ext.js"></script> -->
   <script src="js/app.js"></script>
   <!-- <script src="js/data.js"></script> -->
 </body>
