@@ -3,6 +3,11 @@
     LOG_TRANSITIONS: true
   })
 
+
+  App.Router.reopen({
+    location: 'auto'
+  })
+
   App.ApplicationAdapter = DS.RESTAdapter.extend({
     host: 'http://localhost:7000'
   })
@@ -10,7 +15,7 @@
   App.Router.map(function () {
     this.resource('movies')
     this.resource('movie', { path: 'movies/:movie_id' })
-    this.route('notFound', { path: '*path' })
+    this.route('notFound', { path: '*' })
   })
 
   App.Comment = DS.Model.extend({
@@ -20,9 +25,8 @@
   })
 
   App.MovieSerializer = DS.RESTSerializer.extend(DS.EmbeddedRecordsMixin, {
-      comments: { embedded: 'always' }
-    }
-  )
+    comments: { embedded: 'always' }
+  })
 
   App.Movie = DS.Model.extend({
     title: DS.attr('string'),
@@ -86,28 +90,28 @@
 
         if (!newCommentAuthor || !newCommentText) return
 
-        const model = this.get('model')
+          const model = this.get('model')
 
-        const comment = this.store.createRecord('comment', {
-          author: newCommentAuthor,
-          text: newCommentText
-        })
+          const comment = this.store.createRecord('comment', {
+            author: newCommentAuthor,
+            text: newCommentText
+          })
 
-        model.get('comments').pushObject(comment)
+          model.get('comments').pushObject(comment)
 
-        model.save().then(function (returnItem) {
-          returnItem.get('comments').filterBy('id', null).invoke('deleteRecord')
-        })
+          model.save().then(function (returnItem) {
+            returnItem.get('comments').filterBy('id', null).invoke('deleteRecord')
+          })
 
-        this.set('newCommentAuthor', '')
-        this.set('newCommentText', '')
+          this.set('newCommentAuthor', '')
+          this.set('newCommentText', '')
       }
     }
   })
 
   App.MovieView = Ember.View.extend({
     mpaa_rating_img: function () {
-      return 'img/mpaa-' + this.get('controller.model').get('mpaa_rating').toLowerCase() + '.png'
+      return '/img/mpaa-' + this.get('controller.model').get('mpaa_rating').toLowerCase() + '.png'
     }.property('mpaa_rating')
   })
 
