@@ -7,6 +7,12 @@
     host: 'http://localhost:7000'
   })
 
+  App.Router.map(function () {
+    this.resource('movies')
+    this.resource('movie', { path: 'movies/:movie_id' })
+    this.route('notFound', { path: '*path' })
+  })
+
   App.Comment = DS.Model.extend({
     text: DS.attr('string'),
     author: DS.attr('string'),
@@ -14,10 +20,9 @@
   })
 
   App.MovieSerializer = DS.RESTSerializer.extend(DS.EmbeddedRecordsMixin, {
-    attrs: {
       comments: { embedded: 'always' }
     }
-  })
+  )
 
   App.Movie = DS.Model.extend({
     title: DS.attr('string'),
@@ -29,11 +34,6 @@
     synopsis: DS.attr('string'),
     poster: DS.attr('string'),
     comments: DS.hasMany('comment')
-  })
-
-  App.Router.map(function () {
-    this.resource('movies')
-    this.resource('movie', { path: 'movies/:movie_id' })
   })
 
   App.IndexRoute = Ember.Route.extend({

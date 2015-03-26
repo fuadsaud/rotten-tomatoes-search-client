@@ -9,7 +9,7 @@
 
 <body>
     <!-- templates -->
-    <script type="text/x-handlebars" >
+    <script type="text/x-handlebars">
         <header class="global">
             <h1>
                 {{#link-to 'index'}}Rotten Tomatoes{{/link-to}}
@@ -18,6 +18,18 @@
 
         <main>
             {{outlet}}
+        </main>
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="notFound">
+        <main>
+            <section class="card card--padded not-found">
+                <h1>Not Found</h1>
+
+                <h2>{{#link-to 'index'}}Go back to search{{/link-to}}</h2>
+
+                <p></p>
+            </section>
         </main>
     </script>
 

@@ -29,6 +29,12 @@ header.global h1 a:hover {
     color: inherit;
 }
 
+.not-found {
+    margin: 0 auto;
+
+    width: 80em;
+}
+
 .card {
     background-color: #fff;
     box-shadow: 0 1px  1px      rgba(0, 0, 0, 0.2), 0 8px  0 -3px #f6f6f6,
@@ -44,14 +50,13 @@ header.global h1 a:hover {
 }
 
 .card h1 {
-    font-size: 2em;
+    font-size: 2.5em;
     font-weight: 200;
 
     margin-top: 0;
 }
 
 .card  h2 {
-    color: #ccc;
     color: #ccb200;
     font-size: 2em;
     font-weight: 200;
@@ -65,6 +70,7 @@ header.global h1 a:hover {
     content: '·';
     vertical-align: top;
 }
+
 .search header {
     margin: 0 auto;
     width: 80em;
@@ -115,7 +121,7 @@ header.global h1 a:hover {
 
 .search-results li .search-results__details .search-results__details__title {
     font-size: 3em;
-    color: #c00;
+    color: #ccb200;
 }
 
 .search-results li .search-results__details a {
@@ -142,9 +148,15 @@ header.global h1 a:hover {
     padding: 1em;
 }
 
+.movie .movie__summary .movie__summary__poster img {
+    width: 7em;
+}
+
 .movie .movie__summary .movie__summary__details {
            flex-grow: 1;
     -wekit-flex-grow: 1;
+
+    margin-left: 1em;
 
     padding: 1em;
     width: 80%;
