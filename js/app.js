@@ -25,7 +25,9 @@
   })
 
   App.MovieSerializer = DS.RESTSerializer.extend(DS.EmbeddedRecordsMixin, {
-    comments: { embedded: 'always' }
+    attrs: {
+      comments: { embedded: 'always' }
+    }
   })
 
   App.Movie = DS.Model.extend({
@@ -117,7 +119,6 @@
 
   Ember.TextArea.reopen({
     insertNewline: function (event) {
-      console.log(event.shiftKey)
       if (!event.shiftKey) {
         this._super(event);
       }
