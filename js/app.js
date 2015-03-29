@@ -3,13 +3,12 @@
     LOG_TRANSITIONS: true
   })
 
-
   App.Router.reopen({
     location: 'auto'
   })
 
   App.ApplicationAdapter = DS.RESTAdapter.extend({
-    host: 'http://localhost:7000'
+    host: 'http://rotten-tomatoes-search-server.herokuapp.com'
   })
 
   App.Router.map(function () {
