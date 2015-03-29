@@ -108,23 +108,23 @@ header.global h1 a:hover {
     text-decoration: none;
 }
 
-.search-results li .search-results__poster img {
+.search-results__poster img {
     width: 10em;
 }
 
-.search-results li .search-results__details {
+.search-results__details {
             flex-grow: 1;
     -webkit-flex-grow: 1;
 
     padding:  3em;
 }
 
-.search-results li .search-results__details .search-results__details__title {
+.search-results__details__title {
     font-size: 3em;
     color: #ccb200;
 }
 
-.search-results li .search-results__details a {
+.search-results__details a {
     font-weight: 200;
 }
 
@@ -140,19 +140,19 @@ header.global h1 a:hover {
     margin-bottom: 1em;
 }
 
-.movie .movie__summary {
+.movie__summary {
     display: -webkit-flex;
 }
 
-.movie .movie__summary .movie__summary__poster {
+.movie__summary__poster {
     padding: 1em;
 }
 
-.movie .movie__summary .movie__summary__poster img {
+.movie__summary__poster img {
     width: 7em;
 }
 
-.movie .movie__summary .movie__summary__details {
+.movie__summary__details {
            flex-grow: 1;
     -wekit-flex-grow: 1;
 
@@ -162,36 +162,43 @@ header.global h1 a:hover {
     width: 80%;
 }
 
-.movie .movie__summary .movie__summary__details p {
+.movie__summary__details h1 {
+    color: #ccb200;
+
+    line-height: 1.2em;
+}
+
+.movie__summary__details p {
     margin: 0;
 }
 
-.movie .movie__summary .movie__summary__details p img,
-.movie .movie__summary .movie__summary__details p span {
+.movie__summary__details p img,
+.movie__summary__details p span {
     vertical-align: middle;
 }
 
-.movie .movie__summary .movie__summary__details .movie__summary__details__mpaa-rating {
+.movie__summary__details__mpaa-rating {
     height: 25px;
 }
 
-.movie .movie__comments header {
+.movie__comments header {
     padding: 1.5em 1.5em 1.5em 1.5em;
 }
 
-.movie .movie__comments blockquote,
-.movie .movie__comments p {
+.movie__comments blockquote,
+.movie__comments p {
     padding: 0 1.5em 0 1.5em;
 }
 
-.movie .movie__comments blockquote {
+.movie__comments blockquote {
+    color: #6a6a6a;
     font-family: Georgia, serif;
     font-style: italic;
-    position: relative;
     margin: 2em;
+    position: relative;
 }
 
-.movie .movie__comments blockquote:before {
+.movie__comments blockquote:before {
     display: block;
     padding-left: 10px;
     content: "\201C";
@@ -199,19 +206,19 @@ header.global h1 a:hover {
     position: absolute;
     left: -24px;
     top: 10px;
-    color: #7a7a7a;
+    color: #ccb200;
 }
 
-.movie .movie__comments blockquote cite {
+.movie__comments blockquote cite {
     color: #c00;
     font-weight: bold;
 }
 
-.movie .movie__comments blockquote cite:before {
+.movie__comments blockquote cite:before {
     content: "\2014 \2009";
 }
 
-.movie .movie__comments input, textarea {
+.movie__comments input, textarea {
     border: none;
 
     color: #c00;
@@ -219,24 +226,23 @@ header.global h1 a:hover {
     line-height: 150%;
 
     outline: 0;
-    resize: none;
 
     padding: 1em 1.5em;
     width: 100%;
 }
 
 
-.movie .movie__comments input:hover,
-.movie .movie__comments input:focus,
-.movie .movie__comments textarea:hover,
-.movie .movie__comments textarea:focus {
+.movie__comments input:hover,
+.movie__comments input:focus,
+.movie__comments textarea:hover,
+.movie__comments textarea:focus {
     background-color: #f8f8f8;
 }
 
-.movie .movie__comments .movie__comments__author {
+.movie__comments__author {
     height: 15%;
 }
 
-.movie .movie__comments .movie__comments__text {
+.movie__comments__text {
     height: 30%;
 }
