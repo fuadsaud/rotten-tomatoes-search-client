@@ -12,7 +12,7 @@ hr {
     margin: 1em 0;
 }
 
-header.global h1 {
+.main-header h1 {
     color: #c00;
     font-size: 10em;
     font-weight: 100;
@@ -21,12 +21,23 @@ header.global h1 {
     text-transform: lowercase;
 }
 
-header.global h1 a { text-decoration: none; }
+.main-header h1 a { text-decoration: none; }
 
-header.global h1 a,
-header.global h1 a:visited,
-header.global h1 a:hover {
+.main-header h1 a,
+.main-header h1 a:visited,
+.main-header h1 a:hover {
     color: inherit;
+}
+
+.main-footer {
+    margin: 0 auto;
+    padding: 3em;
+    width: 70%;
+}
+
+.main-footer p {
+    font-size: 1.5em;
+    text-align: center;
 }
 
 .not-found {

@@ -10,7 +10,7 @@
 <body>
     <!-- templates -->
     <script type="text/x-handlebars">
-        <header class="global">
+        <header class="main-header">
             <h1>
                 {{#link-to 'index'}}Rotten Tomatoes{{/link-to}}
             </h1>
@@ -19,6 +19,10 @@
         <main>
             {{outlet}}
         </main>
+
+        <footer class="main-footer">
+            <p>Copyright (c) 2015, Fuad Saud, Ehlana Gray, Sophia Calderone</p>
+        </footer>
     </script>
 
     <script type="text/x-handlebars" data-template-name="notFound">
