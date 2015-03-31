@@ -8,7 +8,7 @@
   })
 
   App.ApplicationAdapter = DS.RESTAdapter.extend({
-    host: 'http://rotten-tomatoes-search-server.herokuapp.com'
+    host: '//rotten-tomatoes-search-server.herokuapp.com'
   })
 
   App.Router.map(function () {
