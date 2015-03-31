@@ -57,9 +57,7 @@
                                 </div>
 
                                 <div class="search-results__details">
-                                    <span class="search-results__details__title">
-                                        {{#link-to 'movie' movie}}{{movie.title}}{{/link-to}}
-                                    </span>
+                                    {{#link-to 'movie' movie class="search-results__details__title"}}{{movie.title}}{{/link-to}}
                                 </div>
                             </li>
                         {{/each}}
